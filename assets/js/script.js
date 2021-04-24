@@ -15,11 +15,13 @@ const weatherSearch = function(city) {
                 const currentWind = data.daily[0].wind_speed;
                 const currentHumidity = data.daily[0].humidity;
                 const currentUvindex = data.daily[0].uvi;
+                const currentIcon = data.daily[0].weather[0].icon;
                 for (let i = 1; i < 6; i++) {
                     const nextTemp = data.daily[i].temp.day;
                     const nextWind = data.daily[i].wind_speed;
                     const nextHumidity = data.daily[i].humidity;
                     const nextUvindex = data.daily[i].uvi;
+                    const nextIcon = data.daily[i].weather[0].icon;
                 }
                 console.log(data.daily[0].temp.day)
                 console.log(data)
