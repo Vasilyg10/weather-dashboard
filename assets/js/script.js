@@ -27,7 +27,7 @@ const weatherSearch = function(city) {
     });
 }
 
-variable.textContent = currentTemp
+// example of how to grab above data -> variable.textContent = currentTemp
 searchBar.addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
         let city = searchBar.value;
