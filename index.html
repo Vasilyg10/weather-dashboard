@@ -20,22 +20,47 @@
 			</h1>
 		</header>
 		<section class="container">
-			<h2>Search for a City:</h2>
-			<div class="row flex-column">
+			<div class="row">
+				<h2 class="col-4">Search for a City:</h2>
+				<div class="ml-1 col-8">
+                    <div class="border border-dark">
+                        <h2>Athens + Today's Date</h2>
+                        <p>Temp: <span id="temp">55</span><span>&#xb0</span>F</p>
+                        <p>Wind: <span id="wind">6</span> MPH</p>
+                        <p>Humidity: <span id="humidity">46</span>%</p>
+                        <p>UV Index: <span id="uvindex">0.47</span></p>
+                    </div>
+                    <div>
+                        <h3 class="mt-2">5-Day Forecast:</h3>
+                    </div>
+				</div>
+			</div>
+			<div class="row">
 				<input
-					class="mb-2 col-3 rounded"
+					class="mb-2 col-4 pt-1 pb-1 rounded"
 					id="searchBar"
 					placeholder="Enter City Here"
 				/>
-				<button class="mb-4 rounded text-white bg-primary col-3" id="searchBtn">
+			</div>
+			<div class="row">
+				<button
+					class="mb-4 pt-1 pb-1 rounded border-0 text-white bg-primary col-4"
+					id="searchBtn"
+				>
 					Search
 				</button>
-				<div class="col-3" id="border"></div>
-				<button class="mt-4 mb-2 rounded text-black col-3" id="searchHistory">
-					Result
-				</button>
 			</div>
-			<div class="row"></div>
+			<div class="row">
+				<div class="col-4" id="border"></div>
+			</div>
+			<div class="row">
+				<div
+					class="text-center pt-1 pb-1 rounded mt-4 mb-2 rounded text-black col-4"
+					id="searchHistory"
+				>
+					Result
+				</div>
+			</div>
 		</section>
 
 		<script src="./assets/js/script.js"></script>
