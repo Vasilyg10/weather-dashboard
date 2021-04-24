@@ -1,0 +1,21 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+#searchBtn:hover {
+	opacity: 80%;
+}
+
+#searchBar:hover {
+	opacity: 60%;
+}
+
+#searchHistory {
+	background-color: rgb(173, 188, 202);
+}
+
+#border {
+	border: 1px solid black;
+}
