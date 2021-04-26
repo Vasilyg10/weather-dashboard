@@ -19,7 +19,7 @@
 				Weather Dashboard
 			</h1>
 		</header>
-		<section class="container">
+		<section class="container-fluid">
 			<div class="row">
                 <div class="col-4">
 				    <h2>Search for a City:</h2>
@@ -41,60 +41,71 @@
                     <div class="row">
                         <div class="mb-4" id="border"></div>
                     </div>
-                    <div class="row">
-                        <div
-					        class="text-center pt-1 pb-1 rounded mb-3 rounded text-black"
-					        id="searchHistory"
-				        >
-					        Result
-				        </div>
-                        <div
-					        class="text-center pt-1 pb-1 rounded mb-3 rounded text-black"
-					        id="searchHistory"
-				        >
-					        Result
-				        </div>
-                        <div
-                        class="text-center pt-1 pb-1 rounded mb-3 rounded text-black"
-                        id="searchHistory"
-                    >
-                        Result
-                    </div>
-                    <div
-                        class="text-center pt-1 pb-1 rounded mb-3 rounded text-black"
-                        id="searchHistory"
-                    >
-                        Result
-                    </div>
-                    <div
-                    class="text-center pt-1 pb-1 rounded mb-3 rounded text-black"
-                    id="searchHistory"
-                >
-                    Result
-                </div>
-                <div
-                    class="text-center pt-1 pb-1 rounded mb-3 rounded text-black"
-                    id="searchHistory"
-                >
-                    Result
-                </div>
+                    <div class="row" id="result">
+                        
                     </div>
                 </div>
-				<div class="col-8">
-                    <div class="border border-dark">
-                        <h2 class="pl-2">Athens + Today's Date</h2>
-                        <p>Temp: <span id="temp">55</span><span>&#xb0</span>F</p>
-                        <p>Wind: <span id="wind">6</span> MPH</p>
-                        <p>Humidity: <span id="humidity">46</span>%</p>
-                        <p>UV Index: <span id="uvindex">0.47</span></p>
+				<div class="col-7">
+                    <div class="border border-dark p-3">
+                        <h2 id="cityName"></h2>
+                        <p>Temp: <span id="temp"></span><span>&#xb0</span>F</p>
+                        <p>Wind: <span id="wind"></span> MPH</p>
+                        <p>Humidity: <span id="humidity"></span>%</p>
+                        <p>UV Index: <span class="rounded" id="uvindex"></span></p>
                     </div>
                     <div>
                         <h3 class="mt-2">5-Day Forecast:</h3>
                     </div>
-				</div>
-			</div>
+                    <div class="row">
+                        <div class="card col-2 m-2 bg-primary">
+                            <div class="card-body">
+                                <h5 class="card-title">4/25/2021</h5>
+                                <img class="col-2 card-img-top" src="..." alt="Card image cap">
+                                <p class="card-text">Temp: <span id="temp1"></span><span>&#xb0</span>F</p>
+                                <p class="card-text">Wind: <span id="wind"></span> MPH</p>
+                                <p class="card-text">Humidity: <span id="humidity"></span>%</p>                            
+                            </div>
+                        </div>
+                        <div class="card col-2 m-2 bg-primary">
+                            <div class="card-body">
+                                <h5 class="card-title">4/25/2021</h5>
+                                <img class="col-2 card-img-top" src="..." alt="Card image cap">
+                                <p class="card-text">Temp: 72 F</p>
+                                <p class="card-text">Wind: 6 MPG</p>
+                                <p class="card-text">Humidty: 20%</p>                            
+                            </div>
+                        </div>
+                        <div class="card col-2 m-2 bg-primary">
+                            <div class="card-body">
+                                <h5 class="card-title">4/25/2021</h5>
+                                <img class="col-2 card-img-top" src="..." alt="Card image cap">
+                                <p class="card-text">Temp: 72 F</p>
+                                <p class="card-text">Wind: 6 MPG</p>
+                                <p class="card-text">Humidty: 20%</p>                            
+                            </div>
+                        </div>
+                        <div class="card col-2 m-2 bg-primary">
+                            <div class="card-body">
+                                <h5 class="card-title">4/25/2021</h5>
+                                <img class="col-2 card-img-top" src="..." alt="Card image cap">
+                                <p class="card-text">Temp: 72 F</p>
+                                <p class="card-text">Wind: 6 MPG</p>
+                                <p class="card-text">Humidty: 20%</p>                            
+                            </div>
+                        </div>
+                        <div class="card col-2 m-2 bg-primary">
+                            <div class="card-body">
+                                <h5 class="card-title">4/25/2021</h5>
+                                <img class="col-2 card-img-top" src="..." alt="Card image cap">
+                                <p class="card-text">Temp: 72 F</p>
+                                <p class="card-text">Wind: 6 MPG</p>
+                                <p class="card-text">Humidty: 20%</p>
+                            </div>
+                        </div>
+				    </div>
+			    </div>
 		</section>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
 		<script src="./assets/js/script.js"></script>
 	</body>
 </html>
