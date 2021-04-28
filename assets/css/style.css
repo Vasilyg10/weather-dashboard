@@ -21,8 +21,18 @@
 	border: 1px solid black;
 }
 
-#uvindex {
+.uvindexFavorable {
 	background-color: rgb(11, 192, 11);
+	padding: 0 5px 1px 5px;
+}
+
+.uvindexModerate {
+	background-color: rgb(236, 233, 13);
+	padding: 0 5px 1px 5px;
+}
+
+.uvindexSevere {
+	background-color: rgb(236, 58, 4);
 	padding: 0 5px 1px 5px;
 }
 

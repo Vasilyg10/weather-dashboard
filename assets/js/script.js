@@ -39,7 +39,6 @@ const weatherSearch = function(city) {
     .then(currentData => {
         let lat = currentData.coord.lat;
         let lon = currentData.coord.lon;
-        console.log(currentData)
         cityNameEl.innerHTML = currentData.name + " " + "(" + moment.unix(currentData.dt).format("MM/DD/YYYY") + ") <img src='http://openweathermap.org/img/w/" + currentData.weather[0].icon + ".png" + "'/>";        
 
         fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly&units=imperial&appid=6ada8502946e81fb6b7659868e983f5b`)
@@ -57,12 +56,32 @@ const weatherSearch = function(city) {
                     const nextUvindex = data.daily[i].uvi;
                     const nextIcon = data.daily[i].weather[0].icon;
                 }
-                console.log(data.daily[0].temp.day)
-                console.log(data)
                 tempEl.textContent = data.daily[0].temp.day;
                 windEl.textContent = data.daily[0].wind_speed;
                 humidityEl.textContent = data.daily[0].humidity;
                 uvindexEl.textContent = data.daily[0].uvi;
+
+                if(data.daily[0].uvi >= 7) {
+                    uvindexEl.classList.remove("uvindexSevere")
+                    uvindexEl.classList.remove("uvindexModerate")
+                    uvindexEl.classList.remove("uvindexFavorable")
+                    uvindexEl.classList.add("uvindexSevere")
+                    uvindexEl.classList.add("rounded")
+                }
+                else if (data.daily[0].uvi <=3) {
+                    uvindexEl.classList.remove("uvindexSevere")
+                    uvindexEl.classList.remove("uvindexModerate")
+                    uvindexEl.classList.remove("uvindexFavorable")
+                    uvindexEl.classList.add("uvindexFavorable")
+                    uvindexEl.classList.add("rounded")
+                }
+                else {
+                    uvindexEl.classList.remove("uvindexSevere")
+                    uvindexEl.classList.remove("uvindexModerate")
+                    uvindexEl.classList.remove("uvindexFavorable")
+                    uvindexEl.classList.add("uvindexModerate")
+                    uvindexEl.classList.add("rounded")
+                }
 
                 temp1El.textContent = data.daily[1].temp.day;
                 wind1El.textContent = data.daily[1].wind_speed;
@@ -87,22 +106,34 @@ const weatherSearch = function(city) {
                 temp5El.textContent = data.daily[5].temp.day;
                 wind5El.textContent = data.daily[5].wind_speed;
                 humidity5El.textContent = data.daily[5].humidity;
-                date5El.innerHTML = moment.unix(data.daily[5].dt).format("MM/DD/YYYY") + "<img src='http://openweathermap.org/img/w/" + data.daily[5].weather[0].icon + ".png" + "'/>";
+                date5El.innerHTML = moment.unix(data.daily[5].dt).format("MM/DD/YYYY") + "<img src='http://openweathermap.org/img/w/" + data.daily[5].weather[0].icon + ".png" + "'/>";                
             });
     });
 }
 
-// resultEl.innerHTML = '<div class="text-center pt-1 pb-1 rounded mb-3 rounded text-black" id="searchHistory">' + Result + '</div>'
+let searchResults = [];
+
+localStorage.getItem('searchResults');
+
+let searching = function () {
+    resultEl.innerHTML = '<div class="text-center pt-1 pb-1 rounded mb-3 rounded text-black" id="searchHistory">' + searchResults + '</div>'
+}
 
 // example of how to grab above data -> variable.textContent = currentTemp
 searchBar.addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
         let city = searchBar.value;
         weatherSearch(city);
+        searchResults.push(city);
+        localStorage.setItem('searchResults', JSON.stringify(searchResults));
+        searching();
     }
 })
     
 searchBtn.addEventListener('click', function() {
     let city = searchBar.value;
     weatherSearch(city);
+    searchResults.push(city);
+    localStorage.setItem('searchResults', JSON.stringify(searchResults));
+    searching();
 })
